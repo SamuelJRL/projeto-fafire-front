@@ -1,0 +1,372 @@
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color: rgba(255, 255, 255, 0.87);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --primary-color: #d8dbe2;
+    --secondary-color: #a9bcd0;
+    --font-color: #373f51;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-color);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Navbar */
+
+.navbar {
+    z-index: 10;
+    position: relative;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navbar-list li {
+    font-weight: 500;
+}
+
+.navbar-list a {
+    text-decoration: none;
+    color: var(--font-color);
+    transition: 0.5s;
+}
+
+.theme-icon {
+    cursor: pointer;
+    color: var(--font-color);
+    transition: 50ms;
+}
+
+.theme-icon:hover {
+    transform: rotate(20deg) scale(1.1);
+    opacity: 0.8;
+}
+
+/* Home */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    min-height: calc(100vh - 64px);
+    color: var(--font-color);
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+}
+
+.hero-text button {
+    margin-top: 2.5rem;
+    padding: 0.7rem 2.2rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 2px #6c63ff;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+/* Subscription Card */
+
+.sub-card {
+    background-color: white;
+    border-radius: 20px;
+    width: calc(50% - 1rem);
+    color: #373f51;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    height: 200px;
+    gap: 2rem;
+    position: relative;
+}
+
+.card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image img {
+    display: flex;
+    justify-content: center;
+    width: 180px;
+    border-radius: 20px;
+}
+
+.sub-card1,
+.sub-card2 {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+
+.card-info {
+    height: 120px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Subscriptions */
+
+.sub-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sub-resume {
+    background-color: white;
+    border-radius: 20px;
+    color: var(--font-color);
+    padding: 20px;
+}
+
+.sub-filter {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.sub-search {
+    width: 250px;
+    height: 33px;
+    padding: 0 20px;
+    border-radius: 12px;
+    border: none;
+}
+
+.sub-inputs {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+.sub-order {
+    display: flex;
+}
+
+.sub-order button {
+    background-color: white;
+    border: none;
+    width: 78px;
+}
+
+.sub-order button:first-child {
+    border-right: 1px solid var(--font-color);
+    border-radius: 20px 0px 0px 20px;
+}
+
+.sub-order button:last-child {
+    border-left: 1px solid var(--font-color);
+    border-radius: 0px 20px 20px 0px;
+}
+
+.sub-add {
+    color: #e6e6e6;
+    background-color: #6c63ff;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: 0.7rem 2.2rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 2px #000000;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.sub-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+    gap: 2rem;
+}
+
+/* form */
+
+.sub-form {
+    color: var(--font-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 64px);
+}
+
+.sub-form form {
+    background-color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    width: 400px;
+    gap: 2rem;
+}
+
+.sub-form input,
+select {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid var(--font-color);
+}
+
+.sub-form input:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: inherit;
+}
+
+.sub-form button {
+    padding: 1rem 1rem;
+    border-radius: 8px;
+    background-color: #6c63ff;
+    color: white;
+    font-weight: 700;
+    border: none;
+}
+
+@media (max-width: 1200px) {
+    .hero-image {
+        display: none;
+    }
+
+    .hero {
+        justify-content: center;
+    }
+
+    .sub-list {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .sub-card {
+        width: 100% !important;
+        max-width: none;
+        margin: 0 auto;
+        height: auto;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .sub-card {
+        width: 100% !important;
+        max-width: none;
+        margin: 0 auto;
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .sub-filter {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .sub-search {
+        width: 100%;
+    }
+
+    .sub-add {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-text h1 {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .sub-card {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 1rem;
+        width: 100% !important;
+    }
+
+    .card-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .card-image img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        border-radius: 20px;
+    }
+
+    .card-texts {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sub-card2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .card-buttons {
+        gap: 1rem;
+    }
+}
