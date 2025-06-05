@@ -4,6 +4,7 @@ import Card from "../../components/Card";
 import { FiPlus } from "react-icons/fi";
 import type { Subscription } from "../../types/Subscription";
 import FormatDate from "../../utils/formatDate";
+import GetValue from "../../utils/GetValue";
 
 export default function Subscriptions() {
     const BASE_API_URL = "http://localhost:3001/subscriptions";
@@ -96,7 +97,11 @@ export default function Subscriptions() {
     return (
         <div className="sub-container">
             <div className="sub-resume">
-                <h2>Total a pagar no mês: 39,00</h2>
+                {subscriptions ? (
+                    <h2>Pagar no mês: R${GetValue({subscriptions})}</h2>
+                ) : (
+                    <h2>Carregando...</h2>
+                )}
                 <h2>
                     Próxima cobrança:{" "}
                     {closestDate
