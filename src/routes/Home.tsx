@@ -7,10 +7,10 @@ export default function Home() {
             <div className="hero-text">
                 <h1>Gerenciamento de Inscrições</h1>
                 <p>
-                    Adicione ou exclua e veja os seus gastos com incrições no
+                    Adicione, exclua e veja os seus gastos com incrições no
                     mês
                 </p>
-                <Link to={"/subscriptions"}><button> See Subscriptions </button></Link>
+                <Link to={"/subscriptions"}><button> Ver inscrições </button></Link>
             </div>
             <div className="hero-image">
                 <img src={heroWallet} />

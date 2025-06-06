@@ -16,6 +16,13 @@ export default function Subscriptions() {
         sub.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    async function deleteSubscription(id: number) {
+        await fetch(`http://localhost:3001/subscriptions/${id}`, {
+            method: "DELETE",
+        });
+        setSubscriptions(subscriptions.filter((sub) => sub.id !== id));
+    }
+
     function getClosestNextBilling(
         subs: Subscription[] | undefined
     ): Subscription | null {
@@ -83,7 +90,11 @@ export default function Subscriptions() {
         return (
             <>
                 {subsList.map((item) => (
-                    <Card key={item.id} subscription={item} />
+                    <Card
+                        key={item.id}
+                        subscription={item}
+                        onDelete={() => deleteSubscription(item.id)}
+                    />
                 ))}
             </>
         );
@@ -98,7 +109,7 @@ export default function Subscriptions() {
         <div className="sub-container">
             <div className="sub-resume">
                 {subscriptions ? (
-                    <h2>Pagar no mês: R${GetValue({subscriptions})}</h2>
+                    <h2>Pagar no mês: R${GetValue({ subscriptions })}</h2>
                 ) : (
                     <h2>Carregando...</h2>
                 )}
@@ -113,13 +124,13 @@ export default function Subscriptions() {
                 <input
                     type="text"
                     className="sub-search"
-                    placeholder="search by name"
+                    placeholder="procurar pelo nome"
                     onChange={(e) => setSearchTerm(e.target.value)}
                     value={searchTerm}
                 />
                 <Link to={"/subscriptions/new"}>
                     <button className="sub-add">
-                        <FiPlus size={20} /> Subscription
+                        <FiPlus size={20} /> Inscrição
                     </button>
                 </Link>
             </div>

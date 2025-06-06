@@ -6,9 +6,10 @@ import { Link } from "react-router-dom";
 
 type Props = {
     subscription: Subscription;
+    onDelete: () => void;
 };
 
-export default function Card({ subscription }: Props) {
+export default function Card({ subscription, onDelete }: Props) {
     return (
         <div className="sub-card">
             <div className="card-image">
@@ -28,7 +29,7 @@ export default function Card({ subscription }: Props) {
             </div>
             <div className="sub-card2">
                 <div className="card-buttons">
-                    <FiTrash size={20} />
+                    <FiTrash size={20} onClick={onDelete} style={{cursor: "pointer"}}/>
                     <Link to={`/subscriptions/${subscription.id}/edit`}>
                         <FiEdit size={20} />
                     </Link>

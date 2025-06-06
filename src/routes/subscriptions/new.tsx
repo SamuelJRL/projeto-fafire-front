@@ -68,9 +68,9 @@ export default function SubscriptionForm({
         <div className="sub-form">
             <form onSubmit={handleSubmit}>
                 {subscription ? (
-                    <h1 style={{ textAlign: "center" }}> Edit Subscription</h1>
+                    <h1 style={{ textAlign: "center" }}> Editar Inscrição</h1>
                 ) : (
-                    <h1 style={{ textAlign: "center" }}> New Subscription</h1>
+                    <h1 style={{ textAlign: "center" }}> Nova inscrição</h1>
                 )}
                 <div>
                     <label htmlFor="name">Nome</label>
